@@ -1,0 +1,23 @@
+<div class="cadastro-container">
+  <div class="cadastro-content">
+    <div class="cadastro-header">
+      <i class="fas fa-user fa-2x"></i> <!-- Ícone de usuário -->
+    </div>
+    <form>
+      <h2 style="text-align: center;">Login</h2>
+      <img style="width: 60px; height:60px; margin-bottom: 20px;" src="../../../assets/download.png" alt="">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" class="form-control" placeholder="Seu e-mail">
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" class="form-control" placeholder="Sua senha">
+      </div>
+      <button class="btn btn-primary btn-block">logar</button>
+    </form>
+    <div class="cadastro-footer">
+      Não tem uma conta? <a [routerLink]="['/cadastro']">Cadastrar</a>
+    </div>
+  </div>
+</div>

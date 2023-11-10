@@ -1,0 +1,72 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer-skoob-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  margin-right: 15px;
+}
+
+.logo-footer{
+  width: 70px;
+}
+
+.footer-icons a {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.footer-app-stores {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.apps a img{
+  margin-right: 10px;
+  height: 33px;
+}
+
+.footer-links-container {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.footer-ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.footer-li {
+  display: inline;
+  margin-right: 12px;
+  font-size: 14px;
+
+}
+
+.footer-li a{
+  color: white;
+  text-decoration: none;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .footer-logo {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .footer-icons {
+    margin-top: 10px;
+  }
+}

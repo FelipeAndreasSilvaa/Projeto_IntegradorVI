@@ -1,0 +1,161 @@
+.profile-posts{
+  padding: 0;
+  margin: 0 60px;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-info img {
+  border-radius: 50%;
+  max-width: 150px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-stats div {
+  text-align: center;
+  width: 33%;
+}
+
+.number {
+  margin-top: 10px; /* Adicione margem acima dos números para criar espaço */
+}
+
+.stat {
+  text-align: center;
+  width: 33%;/* Estilos para telas maiores */
+  .profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .profile-info {
+    flex: 1;
+  }
+
+  .profile-info img {
+    max-width: 100%;
+  }
+
+  .profile-stats, .profile-posts {
+    flex: 1;
+
+  }
+
+  /* Estilos para telas menores (responsivo) */
+  @media (max-width: 768px) {
+    .profile {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-stats, .profile-posts {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .profile-info {
+      text-align: center;
+    }
+  }
+
+  /* Outros estilos para responsivo, se necessário */
+
+}
+
+#timeline-menu{
+  text-align: center;
+  margin-top: 14px;
+}
+
+.stat h2 {
+  margin-bottom: 10px;
+  margin: 20px;/* Adicione margem abaixo dos rótulos h2 para criar espaço */
+}
+
+.stat {
+  text-align: center;
+  width: 33%;
+}
+
+
+.profile-posts {
+  margin-top: 20px;
+}
+
+ .profile-publi img{
+ width: 60px;
+ height: 60px;
+ border-radius: 20px;
+}
+
+.post {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.timeline-menu-button-lidos,
+.timeline-menu-button-lendo,
+.timeline-menu-button-ler,
+.timeline-menu-button-relendo,
+.timeline-menu-button-abandonei,
+.timeline-menu-button-resenhas{
+  background-color: #f1f1f1f1;
+  padding: 7px;
+  color: black;
+}
+
+.timeline-menu-button-lidos:hover,
+.timeline-menu-button-lendo:hover,
+.timeline-menu-button-ler:hover,
+.timeline-menu-button-relendo:hover,
+.timeline-menu-button-abandonei:hover,
+.timeline-menu-button-resenhas:hover{
+  background-color: #007bff;
+  transition: 1s;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-stats, .profile-posts {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .profile-info {
+    text-align: center;
+  }
+}

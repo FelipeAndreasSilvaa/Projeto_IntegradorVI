@@ -1,0 +1,38 @@
+header.header {
+  border-bottom: 2px solid green;
+  padding: 6px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+div.logo {
+  margin: 0 30px;
+}
+
+div.search {
+  margin-top: 5px;
+}
+
+div.search input {
+  height: 30px;
+  outline: 0;
+  width: 300px;
+}
+
+//DROPDOPWN
+
+
+@media (max-width: 580px) {
+  div.center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div.search {
+    margin-top: 10px; /* Ajuste a margem conforme necessário */
+  }
+}

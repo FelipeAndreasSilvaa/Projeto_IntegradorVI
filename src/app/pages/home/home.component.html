@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="profile">
+    <div class="profile-info">
+      <img src="https://img.skoob.com.br/8UHFQoW25XkmTe-MeFUQsaa9rmY=/170x170/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/usuarios/10119929/10119929SK-V11698955719G.jpg" alt="Foto de Perfil">
+      <h1>Nome do Escritor</h1>
+      <p>Biografia do escritor.</p>
+      <p>Localização</p>
+      <button>Editar perfil</button>
+      <button>Publicar</button>
+    </div>
+    <div class="profile-stats">
+      <div class="stat">
+        <h2>Seguidores</h2>
+        <p class="number">1000</p>
+      </div>
+      <div class="stat">
+        <h2>Publicações</h2>
+        <p class="number">50</p>
+      </div>
+      <div class="stat">
+        <h2>Seguindo</h2>
+        <p class="number">200</p>
+      </div>
+    </div><!--profile-stats-->
+  </div><!--profile-->
+
+  <div id="timeline-menu" class="btn-group btn-group-justified" role="group">
+    <a routerLink="['']">
+      <button type="button" class="btn btn-default" data-ng-click="getActivities('friends', 10119929, 0, friends_time)" ng-class="{timelineActive: friends_new_total, bold: bt_feed_amigos}">
+        Amigos <strong data-ng-bind="friends_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+    <a routerLink="['']">
+      <button type="button" class="btn btn-default timeline-menu-button" data-ng-click="getActivities('following', 10119929, 0, following_time)" ng-class="{timelineActive: following_new_total, bold: bt_feed_seguindo}">
+        Seguindo <span data-ng-bind="following_new_total" class="notice-ballon badge ng-binding"></span>
+      </button>
+    </a>
+    <a routerLink="['']">
+      <button type="button" class="btn btn-default timeline-menu-button bold" data-ng-click="getActivities('user', 10119929, 0, user_time)" ng-class="{timelineActive: user_new_total, bold: bt_feed_usuario}">
+        Minhas <strong data-ng-bind="user_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+    <a routerLink="['']">
+      <button type="button" class="btn btn-default timeline-menu-button" data-ng-click="getActivities('groups', 10119929, 0, groups_time)" ng-class="{timelineActive: groups_new_total, bold: bt_feed_grupos}">
+        Grupos <strong data-ng-bind="groups_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+    <a routerLink="['']">
+      <button type="button" class="btn btn-default timeline-menu-button" data-ng-click="getActivities('publishers', 10119929, 0, publishers_time)" ng-class="{timelineActive: publishers_new_total, bold: bt_feed_editoras}">
+        Editoras <strong data-ng-bind="publishers_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+    <a [routerLink]="['/lidos']">
+      <button type="button" class="btn btn-default timeline-menu-button-lidos" data-ng-click="getActivities('publishers', 10119929, 0, publishers_time)" ng-class="{timelineActive: publishers_new_total, bold: bt_feed_editoras}">
+        Lidos <strong data-ng-bind="publishers_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+    <a [routerLink]="['/lendo']">
+      <button type="button" class="btn btn-default timeline-menu-button-lendo" data-ng-click="getActivities('publishers', 10119929, 0, publishers_time)" ng-class="{timelineActive: publishers_new_total, bold: bt_feed_editoras}">
+        Lendo <strong data-ng-bind="publishers_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+    <a [routerLink]="['/quero-ler']">
+      <button type="button" class="btn btn-default timeline-menu-button-ler" data-ng-click="getActivities('publishers', 10119929, 0, publishers_time)" ng-class="{timelineActive: publishers_new_total, bold: bt_feed_editoras}">
+        Quero ler <strong data-ng-bind="publishers_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+    <a [routerLink]="['/relendo']">
+      <button type="button" class="btn btn-default timeline-menu-button-relendo" data-ng-click="getActivities('publishers', 10119929, 0, publishers_time)" ng-class="{timelineActive: publishers_new_total, bold: bt_feed_editoras}">
+        Relendo <strong data-ng-bind="publishers_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+    <a [routerLink]="['/abandonei']">
+      <button type="button" class="btn btn-default timeline-menu-button-abandonei" data-ng-click="getActivities('publishers', 10119929, 0, publishers_time)" ng-class="{timelineActive: publishers_new_total, bold: bt_feed_editoras}">
+        Abandonei <strong data-ng-bind="publishers_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+    <a [routerLink]="['/resenhas']">
+      <button type="button" class="btn btn-default timeline-menu-button-resenhas" data-ng-click="getActivities('publishers', 10119929, 0, publishers_time)" ng-class="{timelineActive: publishers_new_total, bold: bt_feed_editoras}">
+        Resenhas <strong data-ng-bind="publishers_new_total" class="notice-ballon badge ng-binding"></strong>
+      </button>
+    </a>
+  </div>
+
+  <div class="profile-posts">
+    <h2>Publicações Recentes</h2>
+    <div class="post">
+      <div class="profile-publi">
+        <img src="https://img.skoob.com.br/8UHFQoW25XkmTe-MeFUQsaa9rmY=/170x170/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/usuarios/10119929/10119929SK-V11698955719G.jpg" alt="">
+      </div><!--profile-publi-->
+      <h3>Título da Publicação</h3>
+      <p>Resumo da publicação. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button>Curte</button>
+      <button>Comentar</button>
+      <button>Compartilha</button>
+    </div><!--profile-posts-->
+
+    <div class="post">
+        <h2>Publicações Recentes</h2>
+        <div class="profile-publi">
+          <img src="https://img.skoob.com.br/8UHFQoW25XkmTe-MeFUQsaa9rmY=/170x170/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/usuarios/10119929/10119929SK-V11698955719G.jpg" alt="">
+        </div><!--profile-publi-->
+        <h3>Título da Publicação</h3>
+        <p>Resumo da publicação. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button>Curte</button>
+        <button>Comentar</button>
+        <button>Compartilha</button>
+    </div><!--post-->
+    <div class="post">
+      <h2>Publicações Recentes</h2>
+      <div class="profile-publi">
+        <img src="https://img.skoob.com.br/8UHFQoW25XkmTe-MeFUQsaa9rmY=/170x170/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/usuarios/10119929/10119929SK-V11698955719G.jpg" alt="">
+      </div><!--profile-publi-->
+      <h3>Título da Publicação</h3>
+      <p>Resumo da publicação. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button>Curte</button>
+      <button>Comentar</button>
+      <button>Compartilha</button>
+  </div><!--post-->
+    <!-- Outras publicações -->
+  </div><!--profile-posts-->
+</div><!--container-->
+
+
+<app-footer></app-footer>
+
