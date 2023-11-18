@@ -2,27 +2,30 @@
   <div class="profile">
     <div class="profile-info">
       <img src="https://img.skoob.com.br/8UHFQoW25XkmTe-MeFUQsaa9rmY=/170x170/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/usuarios/10119929/10119929SK-V11698955719G.jpg" alt="Foto de Perfil">
-      <h1>Nome do Escritor</h1>
-      <p>Biografia do escritor.</p>
+      <h1>{{nomeEscritor}}</h1>
+      <p>{{bibliografia}}</p>
       <p>Localização</p>
-      <button>Editar perfil</button>
-      <button>Publicar</button>
-    </div>
+      <button (click)="abrirModal()">Editar perfil</button>
+      <button (click)="abrirModalPubli()">Publicar</button>
+    </div><!--profile-info-->
     <div class="profile-stats">
       <div class="stat">
         <h2>Seguidores</h2>
-        <p class="number">1000</p>
+        <p class="number"><b>5M</b></p>
       </div>
       <div class="stat">
         <h2>Publicações</h2>
-        <p class="number">50</p>
+        <p class="number"><b>50</b></p>
       </div>
       <div class="stat">
         <h2>Seguindo</h2>
-        <p class="number">200</p>
+        <p class="number"><b>200</b></p>
       </div>
     </div><!--profile-stats-->
   </div><!--profile-->
+
+  <app-modal *ngIf="exibirModal" (fecharModal)="fecharModal()" (salvarPerfil)="atualizarPerfil($event)"></app-modal>
+  <app-modal-publicacao *ngIf="exibirModalPubli" (fecharModalpubli)="fecharModalpubli()" (publicacaoFeita)="adicionarPublicacao($event)"></app-modal-publicacao>
 
   <div id="timeline-menu" class="btn-group btn-group-justified" role="group">
     <a routerLink="['']">
@@ -88,7 +91,7 @@
       <div class="profile-publi">
         <img src="https://img.skoob.com.br/8UHFQoW25XkmTe-MeFUQsaa9rmY=/170x170/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/usuarios/10119929/10119929SK-V11698955719G.jpg" alt="">
       </div><!--profile-publi-->
-      <h3>Título da Publicação</h3>
+      <h3>imagem do livro</h3>
       <p>Resumo da publicação. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <button>Curte</button>
       <button>Comentar</button>
@@ -100,18 +103,18 @@
         <div class="profile-publi">
           <img src="https://img.skoob.com.br/8UHFQoW25XkmTe-MeFUQsaa9rmY=/170x170/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/usuarios/10119929/10119929SK-V11698955719G.jpg" alt="">
         </div><!--profile-publi-->
-        <h3>Título da Publicação</h3>
+        <h3>imagem do livro</h3>
         <p>Resumo da publicação. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <button>Curte</button>
         <button>Comentar</button>
         <button>Compartilha</button>
     </div><!--post-->
     <div class="post">
-      <h2>Publicações Recentes</h2>
+      <h3>imagem do livro</h3>
       <div class="profile-publi">
         <img src="https://img.skoob.com.br/8UHFQoW25XkmTe-MeFUQsaa9rmY=/170x170/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/usuarios/10119929/10119929SK-V11698955719G.jpg" alt="">
       </div><!--profile-publi-->
-      <h3>Título da Publicação</h3>
+      <h3>imagem do livro</h3>
       <p>Resumo da publicação. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <button>Curte</button>
       <button>Comentar</button>
@@ -123,4 +126,3 @@
 
 
 <app-footer></app-footer>
-

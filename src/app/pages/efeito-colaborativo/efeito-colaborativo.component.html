@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Selecione os gêneros que mais gosta</h1>
+  <div class="options">
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" id="acao"> Ação
+        </label>
+        <label>
+            <input type="checkbox" id="comedia"> Comédia
+        </label>
+        <label>
+            <input type="checkbox" id="drama"> Drama
+        </label>
+    </div>
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" id="romance"> Romance
+        </label>
+        <label>
+            <input type="checkbox" id="novela"> Novela
+        </label>
+        <label>
+            <input type="checkbox" id="poema"> Poema
+        </label>
+    </div>
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" id="conto"> Conto
+        </label>
+        <label>
+            <input type="checkbox" id="teatro"> Teatro
+        </label>
+        <label>
+            <input type="checkbox" id="ficcao"> Ficção
+        </label>
+    </div>
+    <!-- Adicione mais opções conforme necessário -->
+
+    <a [routerLink]="['/about-you']"><button onclick="submitSelection()">Selecionar</button></a>
+</div>
+
+<div id="result" style="display: none;">
+    <h2>Opções Selecionadas:</h2>
+    <ul id="selected-options"></ul>
+</div>
+</div>

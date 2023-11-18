@@ -1,0 +1,26 @@
+<!-- publish-modal.component.html -->
+<div class="modal fade" id="publishModal" tabindex="-1" role="dialog" aria-labelledby="publishModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="publishModalLabel">Nova Publicação</h5>
+        <button type="button" class="close" (click)="fecharModalpubli.emit()" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (submit)="publicarLivro()">
+          <div class="form-group">
+            <label for="titulo">Título do Livro:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" (ngModel)="titulo" required>
+          </div>
+          <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <textarea class="form-control" id="descricao" name="descricao" rows="3" (ngModel)="descricao" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Publicar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

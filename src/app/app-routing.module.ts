@@ -9,6 +9,8 @@ import { AbandoneiComponent } from './pages/abandonei/abandonei.component';
 import { ResenhasComponent } from './pages/resenhas/resenhas.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { LoginComponent } from './components/login/login.component';
+import { EfeitoColaborativoComponent } from './pages/efeito-colaborativo/efeito-colaborativo.component';
+import { AbouYouComponent } from './pages/abou-you/abou-you.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},//ota padrao
@@ -19,7 +21,10 @@ const routes: Routes = [
   {path: 'quero-ler', component: QueroLerComponent },
   {path: 'relendo', component: RelendoComponent },
   {path: 'abandonei', component: AbandoneiComponent },
-  {path: 'resenhas', component: ResenhasComponent }
+  {path: 'resenhas', component: ResenhasComponent },
+  {path: 'efeito-colaborativo', component: EfeitoColaborativoComponent },
+  {path: 'about-you', component: AbouYouComponent }
+
 ];
 
 @NgModule({

@@ -16,6 +16,10 @@ import { AbandoneiComponent } from './pages/abandonei/abandonei.component';
 import { ResenhasComponent } from './pages/resenhas/resenhas.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { LoginComponent } from './components/login/login.component';
+import { EfeitoColaborativoComponent } from './pages/efeito-colaborativo/efeito-colaborativo.component';
+import { AbouYouComponent } from './pages/abou-you/abou-you.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalPublicacaoComponent } from './components/modal-publicacao/modal-publicacao.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,10 @@ import { LoginComponent } from './components/login/login.component';
     ResenhasComponent,
     CadastroComponent,
     LoginComponent,
+    EfeitoColaborativoComponent,
+    AbouYouComponent,
+    ModalComponent,
+    ModalPublicacaoComponent,
   ],
   imports: [
     BrowserModule,
