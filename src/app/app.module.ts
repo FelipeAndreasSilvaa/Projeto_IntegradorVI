@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,9 @@ import { EfeitoColaborativoComponent } from './pages/efeito-colaborativo/efeito-
 import { AbouYouComponent } from './pages/abou-you/abou-you.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalPublicacaoComponent } from './components/modal-publicacao/modal-publicacao.component';
+import { ComentarioComponent } from './components/comentario/comentario.component';
+import { CurtirComponent } from './components/curtir/curtir.component';
+import { CompartilharComponent } from './components/compartilhar/compartilhar.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +45,15 @@ import { ModalPublicacaoComponent } from './components/modal-publicacao/modal-pu
     AbouYouComponent,
     ModalComponent,
     ModalPublicacaoComponent,
+    ComentarioComponent,
+    CurtirComponent,
+    CompartilharComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    FormsModule,
 
   ],
   providers: [],

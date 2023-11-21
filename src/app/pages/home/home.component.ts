@@ -40,4 +40,5 @@ export class HomeComponent {
   adicionarPublicacao(publicacao: { titulo: string; descricao: string; }) {
     this.publicacoes.push(publicacao);
   }
+
 }

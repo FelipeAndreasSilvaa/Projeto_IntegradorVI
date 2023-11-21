@@ -1,0 +1,14 @@
+<div class="comment-section">
+  <button (click)="toggleComments()">Comentar</button>
+
+  <div *ngIf="showComments" class="comments">
+    <div class="comentario" *ngIf="showCommentBox">
+      <textarea [(ngModel)]="newComment" placeholder="Digite seu comentário"></textarea>
+      <button class="btn" (click)="addComment()">Adicionar Comentário</button>
+    </div>
+
+    <div *ngFor="let comment of comments" class="comment">
+      <p>{{ comment }}</p>
+    </div>
+  </div>
+</div>

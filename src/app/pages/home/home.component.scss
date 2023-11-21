@@ -103,6 +103,7 @@
  border-radius: 20px;
 }
 
+
 .post {
   margin-bottom: 20px;
   padding: 10px;
@@ -117,6 +118,11 @@ button {
   padding: 5px 10px;
   cursor: pointer;
   margin-right: 10px;
+}
+
+app-comentario {
+  display: inline-block; /* Adiciona esta linha para tornar o componente 'app-comentario' um elemento em linha */
+  padding: 10px;
 }
 
 button:hover {
@@ -185,4 +191,8 @@ button:hover {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+.btn-1{
+  display: flex;
 }
