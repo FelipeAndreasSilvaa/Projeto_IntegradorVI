@@ -7,14 +7,13 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class ModalComponent {
   @Output() fecharModal = new EventEmitter<void>();
-  @Output() salvarPerfil = new EventEmitter<{ nome: string; foto: string; bibliografia: string; }>();
+  @Output() salvarPerfil = new EventEmitter<{ nome: string; foto: string }>();
 
   novoNome: string = '';
   novaFoto: string = '';
-  novaBibliografia: string = ''
 
   salvarPerfilEditado() {
-    const perfilEditado = { nome: this.novoNome, foto: this.novaFoto, bibliografia: this.novaBibliografia };
+    const perfilEditado = { nome: this.novoNome, foto: this.novaFoto };
     this.salvarPerfil.emit(perfilEditado);
     this.fecharModal.emit();
   }

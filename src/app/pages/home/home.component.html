@@ -3,10 +3,8 @@
     <div class="profile-info">
       <img src="../../../assets/foto.jpg" alt="">
       <h1>{{nomeEscritor}}</h1>
-      <p>{{bibliografia}}</p>
-      <p>Localização</p>
       <button (click)="abrirModal()">Editar perfil</button>
-      <button (click)="abrirModalPubli()">Publicar</button>
+      <!-- <button (click)="abrirModalPubli()">Publicar</button> -->
     </div><!--profile-info-->
     <div class="profile-stats">
       <div class="stat">
@@ -25,7 +23,7 @@
   </div><!--profile-->
 
   <app-modal *ngIf="exibirModal" (fecharModal)="fecharModal()" (salvarPerfil)="atualizarPerfil($event)"></app-modal>
-  <app-modal-publicacao *ngIf="exibirModalPubli" (fecharModalpubli)="fecharModalpubli()" (publicacaoFeita)="adicionarPublicacao($event)"></app-modal-publicacao>
+  <!-- <app-modal-publicacao *ngIf="exibirModalPubli" (fecharModalpubli)="fecharModalpubli()" (publicacaoFeita)="adicionarPublicacao($event)"></app-modal-publicacao> -->
 
   <div id="timeline-menu" class="btn-group btn-group-justified" role="group">
     <a routerLink="['']">

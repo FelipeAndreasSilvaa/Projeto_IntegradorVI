@@ -13,6 +13,18 @@ export class HomeComponent {
   bibliografia: string = ''
   publicacoes: { titulo: string; descricao: string; }[] = [];
 
+  ngOnInit() {
+    // Recupera as informações do perfil do localStorage
+    const perfilSalvo = localStorage.getItem('perfil');
+
+    // Se houver informações salvas, atualiza as propriedades
+    if (perfilSalvo) {
+      const perfil = JSON.parse(perfilSalvo);
+      this.nomeEscritor = perfil.nome;
+      this.fotoPerfil = perfil.foto;
+    }
+  }
+
   abrirModal() {
     this.exibirModal = true;
   }
@@ -30,15 +42,16 @@ export class HomeComponent {
   }
 
 
-  atualizarPerfil(perfilEditado: { nome: string; foto: string; bibliografia: string }) {
+  atualizarPerfil(perfilEditado: { nome: string; foto: string }) {
     this.nomeEscritor = perfilEditado.nome;
     this.fotoPerfil = perfilEditado.foto;
-    this.bibliografia = perfilEditado.bibliografia;
+    this.salvarPerfilLocalmente(perfilEditado); // Adicione essa linha para salvar localmente
     this.fecharModal();
   }
 
-  adicionarPublicacao(publicacao: { titulo: string; descricao: string; }) {
-    this.publicacoes.push(publicacao);
+  salvarPerfilLocalmente(perfil: { nome: string; foto: string }) {
+    // Simplesmente salva no localStorage para fins de demonstração
+    localStorage.setItem('perfil', JSON.stringify(perfil));
   }
 
 }
