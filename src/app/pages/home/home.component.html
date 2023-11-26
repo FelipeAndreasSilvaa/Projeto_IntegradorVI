@@ -1,23 +1,23 @@
 <div class="container">
   <div class="profile">
     <div class="profile-info">
-      <img src="../../../assets/foto.jpg" alt="">
+      <img [src]={fotoPerfil} alt="">
       <h1>{{nomeEscritor}}</h1>
       <button (click)="abrirModal()">Editar perfil</button>
       <!-- <button (click)="abrirModalPubli()">Publicar</button> -->
     </div><!--profile-info-->
     <div class="profile-stats">
       <div class="stat">
-        <h2>Seguidores</h2>
-        <p class="number"><b>5M</b></p>
+        <h2>  </h2>
+        <p class="number"><b> </b></p>
       </div>
       <div class="stat">
-        <h2>Publicações</h2>
-        <p class="number"><b>50</b></p>
+        <h2>  </h2>
+        <p class="number"><b> </b></p>
       </div>
       <div class="stat">
-        <h2>Seguindo</h2>
-        <p class="number"><b>200</b></p>
+        <h2>  </h2>
+        <p class="number"><b> </b></p>
       </div>
     </div><!--profile-stats-->
   </div><!--profile-->
@@ -92,13 +92,13 @@
       <h3>imagem do livro</h3>
       <p>Resumo da publicação. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <!-- <button>Curte</button> -->
-      <div class="btn-1">
-        <app-curtir></app-curtir>
-        <app-comentario></app-comentario>
-        <app-compartilhar></app-compartilhar>
-      </div>
+        <div class="btn-1">
+          <app-curtir></app-curtir>
+          <app-compartilhar></app-compartilhar>
+          <app-comentario></app-comentario>
+        </div><!--btn-1-->
       <!-- <button>Compartilha</button> -->
-    </div><!--profile-posts-->
+    </div><!--posts-->
 
     <div class="post">
         <h2>Publicações Recentes</h2>
@@ -108,11 +108,11 @@
         <h3>imagem do livro</h3>
         <p>Resumo da publicação. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <!-- <button>Curte</button> -->
-        <div class="btn-1">
-          <app-curtir></app-curtir>
-          <app-comentario></app-comentario>
-          <app-compartilhar></app-compartilhar>
-        </div>
+          <div class="btn-1">
+            <app-curtir></app-curtir>
+            <app-compartilhar></app-compartilhar>
+            <app-comentario></app-comentario>
+          </div><!--btn-1-->
         <!-- <button>Compartilha</button> -->
     </div><!--post-->
     <div class="post">
@@ -123,11 +123,11 @@
       <h3>imagem do livro</h3>
       <p>Resumo da publicação. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <!-- <button>Curte</button> -->
-      <div class="btn-1">
-        <app-curtir></app-curtir>
-        <app-comentario></app-comentario>
-        <app-compartilhar></app-compartilhar>
-      </div>
+        <div class="btn-1">
+          <app-curtir></app-curtir>
+          <app-compartilhar></app-compartilhar>
+          <app-comentario></app-comentario>
+        </div><!--btn-1-->
       <!-- <button>Compartilha</button> -->
   </div><!--post-->
     <!-- Outras publicações -->

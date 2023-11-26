@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   nomeEscritor: string = '';
-  fotoPerfil: string = 'https://img.skoob.com.br/8UHFQoW25XkmTe-MeFUQsaa9rmY=/170x170/center/top/smart/filters:format(jpeg)/https://skoob.s3.amazonaws.com/usuarios/10119929/10119929SK-V11698955719G.jpg';
+  fotoPerfil: string = '';
   exibirModal: boolean = false;
   exibirModalPubli: boolean = false;
   bibliografia: string = ''

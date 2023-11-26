@@ -3,12 +3,18 @@
 
   <div *ngIf="showComments" class="comments">
     <div class="comentario" *ngIf="showCommentBox">
+
       <textarea [(ngModel)]="newComment" placeholder="Digite seu comentário"></textarea>
       <button class="btn" (click)="addComment()">Adicionar Comentário</button>
     </div>
 
-    <div *ngFor="let comment of comments" class="comment">
-      <p>{{ comment }}</p>
+    <div *ngFor="let comment of comments let i = index" class="comment">
+      <div class="profile-public">
+        <img src="../../../assets/foto.jpg" alt="">
+        <span>Felipe Andreas Silva</span>
+      </div><!--profile-foto-->
+      <p style="margin: 10px -153px; width: 100%;">{{ comment }}</p>
+      <button class="remove-btn" (click)="removeComment(i)">Remover</button>
     </div>
   </div>
 </div>

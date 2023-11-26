@@ -1,23 +1,44 @@
-.comentario{
-  display: flex;
-  flex-direction: column;
-}
-
-.btn{
-  margin-top: 10px;
+.comment-section{
+  width: 100%;
 }
 
 .comments {
-  // display: none;
+  width: 100%;
   margin-top: 10px;
+}
+
+
+.comentario textarea {
+  margin-top: 5px;
+  width: calc(100% - 10px); /* Subtraindo a margem superior para manter o espaçamento consistente */
+  box-sizing: border-box; /* Isso garante que a largura inclua as bordas e o preenchimento */
+  word-wrap: break-word; /* Quebra de palavra para evitar que o texto ultrapasse a largura da textarea */
 }
 
 .comment {
   padding: 5px;
   margin-top: 10px;
   margin-bottom: 5px;
+  width: 100%;
 }
 
-textarea {
-  margin-top: 5px;
+
+.profile-public img {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+.profile-public p{
+  margin: 0 51px;
+}
+
+.profile-public span {
+  font-size: 17px;
+  margin: 10px -213px;
+}
+
+/* Adicione este estilo para garantir que o botão também tenha 100% da largura */
+.comentario button {
+  width: 100%;
 }

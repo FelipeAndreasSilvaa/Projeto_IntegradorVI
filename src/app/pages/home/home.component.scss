@@ -196,3 +196,14 @@ button:hover {
 .btn-1{
   display: flex;
 }
+
+.btn-1 app-curtir,
+.btn-1 app-compartilhar,
+.btn-1 app-comentario {
+  margin-right: 10px; /* Adicione margem à direita de cada filho, exceto o último */
+  padding: 10px; /* Adicione preenchimento a cada filho */
+}
+
+.btn-1 app-comentario{
+  margin: 10px;
+}
