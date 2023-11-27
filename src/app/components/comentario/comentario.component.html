@@ -7,14 +7,15 @@
       <textarea [(ngModel)]="newComment" placeholder="Digite seu comentário"></textarea>
       <button class="btn" (click)="addComment()">Adicionar Comentário</button>
     </div>
+  </div>
 
     <div *ngFor="let comment of comments let i = index" class="comment">
-      <div class="profile-public">
+      <!-- <div class="profile-public">
         <img src="../../../assets/foto.jpg" alt="">
         <span>Felipe Andreas Silva</span>
-      </div><!--profile-foto-->
+      </div>profile-public -->
       <p style="margin: 10px -153px; width: 100%;">{{ comment }}</p>
       <button class="remove-btn" (click)="removeComment(i)">Remover</button>
+      <button style="margin: 0 5px;" class="curtir-btn">Curtir</button>
     </div>
-  </div>
 </div>

@@ -19,12 +19,19 @@ export class ComentarioComponent {
   }
 
   toggleComments() {
+    // Inverte o estado de showComments
     this.showComments = !this.showComments;
+
     this.showCommentBox = this.showComments;
 
-    // Carregue os comentários do localStorage quando os comentários estiverem visíveis
+    // Se os comentários estiverem visíveis, mostre o campo de comentário e carregue os comentários
     if (this.showComments) {
+      this.showCommentBox = true;
       this.loadComments();
+    } else {
+      // Se os comentários estiverem ocultos, esconda o campo de comentário e salve os comentários
+      this.showCommentBox = false;
+      this.saveComments();
     }
   }
 
@@ -32,9 +39,6 @@ export class ComentarioComponent {
     if (this.newComment.trim() !== '') {
       this.comments.push(this.newComment);
       this.newComment = '';
-      this.showCommentBox = false;
-
-      // Salve os comentários no localStorage após adicionar um comentário
       this.saveComments();
     }
   }

@@ -10,6 +10,7 @@
 
 .comentario textarea {
   margin-top: 5px;
+  resize: vertical;
   width: calc(100% - 10px); /* Subtraindo a margem superior para manter o espaçamento consistente */
   box-sizing: border-box; /* Isso garante que a largura inclua as bordas e o preenchimento */
   word-wrap: break-word; /* Quebra de palavra para evitar que o texto ultrapasse a largura da textarea */
@@ -22,6 +23,9 @@
   width: 100%;
 }
 
+.profile-public {
+
+}
 
 .profile-public img {
   width: 60px;
@@ -35,10 +39,25 @@
 
 .profile-public span {
   font-size: 17px;
-  margin: 10px -213px;
+
 }
 
 /* Adicione este estilo para garantir que o botão também tenha 100% da largura */
 .comentario button {
   width: 100%;
+}
+
+@media (max-width: 990px) {
+  .profile-public{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    float: left;
+  }
+
+  .comentario button {
+    width: 100%;
+    text-align: center;
+    display: flex;
+  }
 }
