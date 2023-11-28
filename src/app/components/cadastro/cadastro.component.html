@@ -8,17 +8,23 @@
       <img style="width: 60px; height:60px; margin-bottom: 20px;" src="../../../assets/download.png" alt="">
       <div class="form-group">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" class="form-control" placeholder="Seu nome">
+        <input type="text" id="nome" class="form-control" placeholder="Seu nome" [(ngModel)]="nome" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="form-group">
         <label for="email">E-mail</label>
-        <input type="email" id="email" class="form-control" placeholder="Seu e-mail">
+        <input type="email" id="email" class="form-control" placeholder="Seu e-mail" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="form-group">
         <label for="senha">Senha</label>
-        <input type="password" id="senha" class="form-control" placeholder="Sua senha">
+        <input type="password" id="senha" class="form-control" placeholder="Sua senha" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}">
       </div>
-      <a [routerLink]="['/efeito-colaborativo']"><button class="btn btn-primary btn-block">Cadastrar</button></a>
+      <button class="btn btn-primary btn-block" (click)="cadastrar()">Cadastrar</button>
     </form>
+    <div id="mensagem" class="mensagem-erro" *ngIf="mensagemErro">
+      {{ mensagemErro }}
+    </div>
+    <div id="mensagem" class="mensagem-sucesso" *ngIf="mensagemSucesso">
+      {{ mensagemSucesso }}
+    </div>
   </div>
 </div>

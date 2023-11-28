@@ -43,3 +43,29 @@
 .cadastro-footer {
   margin-top: 10px;
 }
+
+// #mensagem {
+//   display: none;
+//   position: fixed;
+//   top: 20px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   padding: 10px;
+//   background-color: #4CAF50;
+//   color: #fff;
+//   border-radius: 5px;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   z-index: 999;
+// }
+
+.mensagem-sucesso {
+  background-color: #4CAF50;
+  font-weight: bold; /* Opcional: torna o texto em negrito */
+  margin-top: 5px;
+}
+
+.mensagem-erro {
+  color: red;
+  font-weight: bold; /* Opcional: torna o texto em negrito */
+  margin-top: 5px; /* Opcional: adiciona um espaço superior para separar de outros elementos */
+}

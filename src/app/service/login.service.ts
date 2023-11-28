@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient  } from '@angular/common/http'
-import { Observable } from 'rxjs'
+import { HttpClient, HttpHeaders  } from '@angular/common/http'
+import { Observable, BehaviorSubject  } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = 'URL_DO_SEU_BACKEND/api/login';
 
-  constructor(private httpClient: HttpClient) { }
+  private apiUrl = 'http://localhost:3000'; // Altere conforme necessário
 
-  fazerLogin(credenciais: any): Observable<any> {
-    return this.httpClient.post<any>(`${this.apiUrl}`, credenciais);
+  constructor(private http: HttpClient) {}
+
+  login(email: string, senha: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Basic ' + btoa(`${email}:${senha}`),
+    });
+
+    return this.http.get(`${this.apiUrl}/login`, { headers });
   }
+
 }

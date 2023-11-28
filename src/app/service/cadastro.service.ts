@@ -6,11 +6,13 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class CadastroService {
-  private apiUrl = 'URL_DO_SEU_BACKEND/api/cadastro';
 
-  constructor(private httpClient: HttpClient) {}
+  private baseUrl = 'http://localhost:3000';
 
-  cadastroDeUsuario(usuarios: any): Observable<any> {
-    return this.httpClient.post<any>(`${this.apiUrl}`, usuarios)
+  constructor(private http: HttpClient) {}
+
+  cadastrarUsuario(nome: string, email: string, senha: string) {
+    const dadosUsuario = { nome, email, senha };
+    return this.http.post(`${this.baseUrl}/cadastro`, dadosUsuario);
   }
 }

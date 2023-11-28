@@ -25,6 +25,7 @@ import { ModalPublicacaoComponent } from './components/modal-publicacao/modal-pu
 import { ComentarioComponent } from './components/comentario/comentario.component';
 import { CurtirComponent } from './components/curtir/curtir.component';
 import { CompartilharComponent } from './components/compartilhar/compartilhar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { CompartilharComponent } from './components/compartilhar/compartilhar.co
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
+    HttpClientModule,
 
   ],
   providers: [],
