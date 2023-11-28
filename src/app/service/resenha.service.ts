@@ -6,6 +6,11 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class ResenhaService {
+  private baseUrl = 'http://localhost:3000/livros'; // Atualize com a URL correta do seu servidor
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
+
+  getLivros(): Observable<any> {
+    return this.http.get(this.baseUrl);
+  }
 }

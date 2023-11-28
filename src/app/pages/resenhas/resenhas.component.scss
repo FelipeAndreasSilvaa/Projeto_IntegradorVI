@@ -1,6 +1,6 @@
-.center{
-  display: flex;
-  margin: 20px 50px;
+.center {
+  max-width: 1200px; /* Define a largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza o conteúdo na página */
 }
 
 .foto .img-foto{
@@ -32,26 +32,38 @@
  color: black;
 }
 
-.recent-news .title{
-  margin-top: 20px;
-  text-align: center;
+.recent-news {
+  background-color: #f5f5f5; /* Cor de fundo para destacar a seção */
+  padding: 20px; /* Adiciona algum espaçamento interno */
 }
 
-.news-container{
+.news-row {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between; /* Distribui os contêineres uniformemente ao longo do eixo principal */
+  gap: 20px; /* Adiciona espaçamento entre os contêineres */
 }
 
-.news-container-single{
-  width: calc(33.33% - 20px);
-  text-align: center;
+.news-container-single {
+  width: calc(33.33% - 20px); /* Calcula a largura de cada contêiner (33.33% - espaçamento) */
   box-sizing: border-box;
+  background-color: #fff; /* Cor de fundo dos contêineres individuais */
+  padding: 15px; /* Adiciona algum espaçamento interno nos contêineres */
+  border: 1px solid #ddd; /* Adiciona uma borda para separar os contêineres */
+  text-align: center;
 }
 
-.news-container-single img{
-  max-width: 100%;
+.news-container-single img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+}
+
+h3 {
+  font-size: 18px; /* Define o tamanho da fonte para os títulos */
+  margin-bottom: 10px; /* Adiciona algum espaçamento abaixo dos títulos */
+}
+
+p {
+  margin-bottom: 8px; /* Adiciona algum espaçamento abaixo dos parágrafos */
 }
 
 @media (max-width: 768px) {

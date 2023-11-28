@@ -24,6 +24,18 @@ db.connect((err) => {
   }
 });
 
+app.get('/livros', (req, res) => {
+  db.query('SELECT * FROM livros', (err, results) => {
+    if (err) {
+      console.error('Erro ao obter livros do MySQL:', err);
+      res.status(500).json({ error: 'Erro interno ao obter livros.' });
+    } else {
+      res.json({ livros: results });
+    }
+  });
+});
+
+
 app.post('/cadastro', (req, res) => {
   const { nome, email, senha } = req.body;
 
@@ -101,11 +113,6 @@ app.get('/login', (req, res) => {
     }
   });
 });
-
-
-// ... (código existente)
-
-
 
 
 app.listen(PORT, () => {

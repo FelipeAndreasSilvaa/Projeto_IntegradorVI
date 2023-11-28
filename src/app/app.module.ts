@@ -26,6 +26,8 @@ import { ComentarioComponent } from './components/comentario/comentario.componen
 import { CurtirComponent } from './components/curtir/curtir.component';
 import { CompartilharComponent } from './components/compartilhar/compartilhar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChunkPipe } from './pipe/chunk.pipe';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { HttpClientModule } from '@angular/common/http';
     ComentarioComponent,
     CurtirComponent,
     CompartilharComponent,
+    ChunkPipe,
   ],
   imports: [
     BrowserModule,

@@ -24,41 +24,16 @@
 
 <section class="recent-news">
   <div class="center">
-      <div class="title">
-      </div><!--title-->
-      <div class="news-container">
-          <div class="news-container-single">
-              <img src="../../../assets/livro1.png" alt="">
-              <h3>Nutrição essencial</h3>
-              <span>December 26, 2018</span>
-          </div><!--news-container-single-->
-          <div class="news-container-single">
-              <img src="../../../assets/livro2.png" alt="">
-              <h3>Nutrição essencial</h3>
-              <span>December 26, 2018</span>
-          </div><!--news-container-single-->
-          <div class="news-container-single">
-              <img src="../../../assets/livro3.png" alt="">
-              <h3>Nutrição essencial</h3>
-              <span>December 26, 2018</span>
-          </div><!--news-container-single-->
-          <div class="news-container-single">
-            <img src="../../../assets/livro1.png" alt="">
-            <h3>Nutrição essencial</h3>
-            <span>December 26, 2018</span>
-        </div><!--news-container-single-->
-        <div class="news-container-single">
-          <img src="../../../assets/livro1.png" alt="">
-          <h3>Nutrição essencial</h3>
-          <span>December 26, 2018</span>
-      </div><!--news-container-single-->
-      <div class="news-container-single">
+    <div class="title"></div>
+    <div *ngFor="let linha of livrosDivididos" class="news-row">
+      <div *ngFor="let livro of linha" class="news-container-single">
         <img src="../../../assets/livro1.png" alt="">
-        <h3>Nutrição essencial</h3>
-        <span>December 26, 2018</span>
-    </div><!--news-container-single-->
-      </div><!--news-container-->
-  </div><!--center-->
-</section><!--recent-news-->
+        <h3>{{ livro.titulo }}</h3>
+        <p>Preço: R${{ livro.preco }}</p>
+        <p>Descrição: {{ livro.descricao }}</p>
+      </div>
+    </div>
+  </div>
+</section>
 
  <!-- <app-footer></app-footer> -->
