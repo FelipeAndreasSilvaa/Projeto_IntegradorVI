@@ -43,3 +43,15 @@
 .cadastro-footer {
   margin-top: 10px;
 }
+
+.mensagem-sucesso {
+  background-color: #4CAF50;
+  font-weight: bold; /* Opcional: torna o texto em negrito */
+  margin-top: 5px;
+}
+
+.mensagem-erro {
+  color: red;
+  font-weight: bold; /* Opcional: torna o texto em negrito */
+  margin-top: 5px; /* Opcional: adiciona um espaço superior para separar de outros elementos */
+}

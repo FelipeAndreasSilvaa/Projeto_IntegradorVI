@@ -91,11 +91,32 @@ app.post('/cadastro', (req, res) => {
   });
 });
 
-app.post('/login', (req, res) => {
-  const { email, senha } = req.body;
+// app.post('/login', (req, res) => {
+//   const { email, senha } = req.body;
 
-  const query = 'SELECT * FROM usuarios WHERE email = ? AND senha = ?';
-  db.query(query, [email, senha], (err, result) => {
+//   const query = 'SELECT * FROM usuarios WHERE email = ? AND senha = ?', [email, senha];
+//   console.log(query);
+//   db.query(query, (err, result) => {
+//     if (err) {
+//       console.error('Erro no servidor ao verificar usuário:', err);
+//       res.status(500).json({ success: false, message: 'Erro no servidor' });
+//     } else {
+//       if (result.length > 0) {
+//         console.log('Login bem-sucedido para:', email, senha);
+//         res.json({ success: true, message: 'Login bem-sucedido' });
+//       } else {
+//         console.log('Credenciais inválidas para:', email, senha);
+//         res.json({ success: false, message: 'Credenciais inválidas' });
+//       }
+//     }
+//   });
+// });
+
+ app.post('/login', (req, res) => {
+   const { email, senha } = req.body;
+
+   db.query('select email, senha from usuarios where email = ? and senha = ?',
+  [email, senha], (err, result) => {
     if (err) {
       console.error('Erro no servidor ao verificar usuário:', err);
       res.status(500).json({ success: false, message: 'Erro no servidor' });
@@ -109,10 +130,26 @@ app.post('/login', (req, res) => {
       }
     }
   });
-});
+ });
 
 
+app.post('/teste', verifyToken, (req,res)=>{
+  res.json('Informação secreta')
+})
 
+function verifyToken(req,res, next){
+  if(!req.headers.authorization) return res.status(401).json('No autorizado');
+
+  const token = req.headers.authorization.substr(7);
+  if(token!==''){
+    const content = jwt.verify(token,'stil');
+    req.data = content;
+    next();
+  }else{
+    res.status(401).json('Token vacio');
+  }
+
+}
 
 app.listen(PORT, () => {
   console.log(`Servidor Node.js em execução em http://localhost:${PORT}`);

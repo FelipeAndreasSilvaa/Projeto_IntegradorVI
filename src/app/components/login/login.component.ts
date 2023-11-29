@@ -11,40 +11,36 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   email: string = '';
   senha: string = '';
+  mensagemErro: string = '';
+  mensagemSucesso: string = '';
 
   constructor(private loginService: LoginService, private router: Router) {}
 
-  fazerLogin() {
-    // Verificar se os campos estão preenchidos
-    // if (!this.email || !this.senha) {
-    //   alert('Favor preencher os campos.');
-    //   return;
-    // }
 
-    this.loginService.getLogin(this.email, this.senha).subscribe(
+   fazerLogin() {
+     const email = this.email; // Acesse as propriedades corretas do componente
+     const senha = this.senha;
+
+     // Agora você pode chamar o serviço para fazer a solicitação HTTP e verificar o login
+    this.loginService.getLogin(email, senha).subscribe(
       (response) => {
-        // Verificar a resposta do serviço de login
         if (response.success) {
-          console.log('Login bem-sucedido', response);
-
-          // Exibir mensagem na interface do usuário
-          alert('Login efetuado com sucesso!');
-
+          this.mensagemSucesso = 'Login efetuado com sucesso!';
+          // localStorage.setItem('token',response.token)
           // Redirecionar para a página de meus livros após 2 segundos
-          setTimeout(() => {
-            // Substitua '/meusLivros' pela rota desejada
-            this.router.navigate(['/home']);
-          }, 2000);
-        } else {
-          // Caso a resposta não seja bem-sucedida
-          alert('Dados incorretos.');
-        }
-      },
-      (error) => {
-        // Caso ocorra um erro no serviço de login
-        console.error('Erro no login', error);
-      }
-    );
-  }
+         setTimeout(() => {
+           this.router.navigate(['/home']);
+         }, 2000);
+       } else {
+        this.mensagemErro = 'Credenciais inválidas!';
+       }
+     },
+     (error) => {
+       console.error('Erro no login', error);
+     }
+   );
+ }
+
+
 
 }
