@@ -15,21 +15,36 @@ export class LoginComponent {
   constructor(private loginService: LoginService, private router: Router) {}
 
   fazerLogin() {
-    this.loginService.login(this.email, this.senha).subscribe(
+    // Verificar se os campos estão preenchidos
+    // if (!this.email || !this.senha) {
+    //   alert('Favor preencher os campos.');
+    //   return;
+    // }
+
+    this.loginService.getLogin(this.email, this.senha).subscribe(
       (response) => {
+        // Verificar a resposta do serviço de login
         if (response.success) {
-          console.log('Login bem-sucedido');
-          // Adicione redirecionamento para a próxima página
-          this.router.navigate(['/home']);
+          console.log('Login bem-sucedido', response);
+
+          // Exibir mensagem na interface do usuário
+          alert('Login efetuado com sucesso!');
+
+          // Redirecionar para a página de meus livros após 2 segundos
+          setTimeout(() => {
+            // Substitua '/meusLivros' pela rota desejada
+            this.router.navigate(['/home']);
+          }, 2000);
         } else {
-          console.log('Credenciais inválidas');
-          // Adicione lógica para lidar com falha de login
+          // Caso a resposta não seja bem-sucedida
+          alert('Dados incorretos.');
         }
       },
       (error) => {
+        // Caso ocorra um erro no serviço de login
         console.error('Erro no login', error);
-        // Adicione lógica para lidar com erros de comunicação com o servidor
       }
     );
   }
+
 }

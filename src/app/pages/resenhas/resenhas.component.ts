@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ResenhaService } from 'src/app/service/resenha.service';
 
 @Component({
@@ -9,8 +10,9 @@ import { ResenhaService } from 'src/app/service/resenha.service';
 export class ResenhasComponent implements OnInit{
   livros: any[] = [];
   livrosDivididos: any[] = [];
+  // user_id: number = ;
 
-  constructor(private resenhaService: ResenhaService) {}
+  constructor(private resenhaService: ResenhaService, private router: Router) {}
 
   ngOnInit(): void {
     this.carregarLivros();
@@ -30,5 +32,9 @@ export class ResenhasComponent implements OnInit{
     }
   }
 
+  // pegarLivro(livroId: number, user_id: number): void {
+  //   // Redirecione para a página de "Meus Livros" com referência ao livro e usuário
+  //   this.router.navigate(['/meus-livros'], { queryParams: { livroId, user_id } });
+  // }
 
 }

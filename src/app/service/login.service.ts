@@ -7,17 +7,12 @@ import { Observable, BehaviorSubject  } from 'rxjs'
 })
 export class LoginService {
 
-  private apiUrl = 'http://localhost:3000'; // Altere conforme necessário
+  private baseUrl = 'http://localhost:3000'; // Altere conforme necessário
 
   constructor(private http: HttpClient) {}
 
-  login(email: string, senha: string): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Basic ' + btoa(`${email}:${senha}`),
-    });
-
-    return this.http.get(`${this.apiUrl}/login`, { headers });
+  getLogin(email: string, senha: string): Observable<any> {
+    return this.http.post(`${this.baseUrl}/login`, { email, senha });
   }
 
 }

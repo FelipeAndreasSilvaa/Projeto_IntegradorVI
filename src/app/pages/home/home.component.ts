@@ -13,6 +13,7 @@ export class HomeComponent {
   bibliografia: string = ''
   publicacoes: { titulo: string; descricao: string; }[] = [];
 
+
   ngOnInit() {
     // Recupera as informações do perfil do localStorage
     const perfilSalvo = localStorage.getItem('perfil');
@@ -45,6 +46,7 @@ export class HomeComponent {
   atualizarPerfil(perfilEditado: { nome: string; foto: string }) {
     this.nomeEscritor = perfilEditado.nome;
     this.fotoPerfil = perfilEditado.foto;
+
     this.salvarPerfilLocalmente(perfilEditado); // Adicione essa linha para salvar localmente
     this.fecharModal();
   }
@@ -53,5 +55,7 @@ export class HomeComponent {
     // Simplesmente salva no localStorage para fins de demonstração
     localStorage.setItem('perfil', JSON.stringify(perfil));
   }
+
+
 
 }

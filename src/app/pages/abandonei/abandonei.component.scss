@@ -49,6 +49,30 @@
   max-width: 100%;
 }
 
+.mini-rodape {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.livro {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.livro img {
+  max-width: 100px;
+  max-height: 150px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 768px) {
   .imagem {
       width: 100%; /* Largura total da tela */

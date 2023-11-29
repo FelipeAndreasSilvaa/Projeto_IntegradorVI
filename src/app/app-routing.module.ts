@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'abandonei', component: AbandoneiComponent },
   {path: 'resenhas', component: ResenhasComponent },
   {path: 'efeito-colaborativo', component: EfeitoColaborativoComponent },
-  {path: 'about-you', component: AbouYouComponent }
+  {path: 'about-you', component: AbouYouComponent },
 
 ];
 

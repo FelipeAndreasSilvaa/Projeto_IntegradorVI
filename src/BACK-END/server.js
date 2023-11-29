@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql2');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const PORT = 3000;
@@ -89,30 +91,27 @@ app.post('/cadastro', (req, res) => {
   });
 });
 
-app.get('/login', (req, res) => {
-  const authHeader = req.headers.authorization;
+app.post('/login', (req, res) => {
+  const { email, senha } = req.body;
 
-  const encodedCredentials = authHeader.split(' ')[1];
-  const decodedCredentials = Buffer.from(encodedCredentials, 'base64').toString('utf-8');
-  const [email, senha] = decodedCredentials.split(':');
-
-
-  const checkUserQuery = 'SELECT * FROM usuarios WHERE email = ? AND senha = ?';
-  db.query(checkUserQuery, [email, senha], (err, results) => {
+  const query = 'SELECT * FROM usuarios WHERE email = ? AND senha = ?';
+  db.query(query, [email, senha], (err, result) => {
     if (err) {
-      console.error('Erro ao verificar usuário', err);
-      res.status(500).json({ error: 'Erro interno ao verificar usuário' });
+      console.error('Erro no servidor ao verificar usuário:', err);
+      res.status(500).json({ success: false, message: 'Erro no servidor' });
     } else {
-      if (results.length > 0) {
-        // Usuário encontrado, login bem-sucedido
-        res.status(200).json({ success: true });
+      if (result.length > 0) {
+        console.log('Login bem-sucedido para:', email, senha);
+        res.json({ success: true, message: 'Login bem-sucedido' });
       } else {
-        // Nenhum usuário encontrado, login falhou
-        res.status(401).json({ error: 'Credenciais inválidas', authHeader: authHeader });
+        console.log('Credenciais inválidas para:', email, senha);
+        res.json({ success: false, message: 'Credenciais inválidas' });
       }
     }
   });
 });
+
+
 
 
 app.listen(PORT, () => {
