@@ -125,7 +125,6 @@ app.post('/cadastro', (req, res) => {
   });
 });
 
-
 app.get('/livrosUser', (req, res) => {
   const { user_id } = req.query;
 
@@ -139,6 +138,21 @@ app.get('/livrosUser', (req, res) => {
   });
 });
 
+app.post('/livrosPego', (req, res) => {
+  const { user_id, product_id, title, time, score } = req.body;
+
+  const query = 'INSERT INTO livrosPego (user_id, product_id, title, review_time, review_score) VALUES (?, ?, ?, ?, ?)';
+  const values = [user_id, product_id, title, time, score];
+
+  db.query(query, values, (err, result) => {
+    if (err) {
+      console.error('Erro ao adicionar livro pego:', err);
+      res.status(500).send('Erro ao adicionar livro pego');
+    } else {
+      res.json({ message: 'Livro adicionado aos pegos com sucesso!' });
+    }
+  });
+});
 
 
 // app.post('/teste', verifyToken, (req,res)=>{

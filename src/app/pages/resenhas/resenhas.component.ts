@@ -32,18 +32,30 @@ export class ResenhasComponent implements OnInit{
       this.livrosDivididos.push(this.livros.slice(i, i + tamanhoLinha));
     }
   }
+  pegarLivro(livroId: number, livros: any): void {
+    const usuarioId = 1; // Substitua pelo ID real do usuário logado
 
-  pegarLivro(livroId: number): void {
-    // Você precisará obter o ID do usuário logado
-    const usuarioId = 1 // obter o ID do usuário logado;
+    if (livroId) {
+        // Envia a solicitação para adicionar o livro abandonado
+        this.abandoneiService.adicionarLivroAbandonado(usuarioId, livroId)
+            .subscribe(() => {
+                console.log(`Livro ${livroId} marcado como abandonado e salvo no banco de dados.`);
+                // Adicione qualquer lógica adicional necessária após marcar como abandonado
+                // Por exemplo, você pode querer recarregar a lista de livros abandonados
+            });
 
-    this.abandoneiService.adicionarLivroAbandonado(usuarioId, livroId)
-        .subscribe(() => {
-            // Aqui você pode adicionar lógica adicional se necessário
-            console.log(usuarioId)
-            console.log(`Livro ${livroId} adicionado aos abandonados.`);
-        });
+        this.abandoneiService.adicionarLivroAbandonado2(usuarioId, this.livros.find(livro => livro.Id === livroId))
+            .subscribe(() => {
+                console.log(`Livro ${livroId} marcado como abandonado e salvo no banco de dados.`);
+                // Adicione qualquer lógica adicional necessária após marcar como abandonado
+                // Por exemplo, você pode querer recarregar a lista de livros abandonados
+            });
+    } else {
+        console.error("ID do livro é indefinido.");
+    }
 }
+
+
   // pegarLivro(livroId: number, user_id: number): void {
   //   // Redirecione para a página de "Meus Livros" com referência ao livro e usuário
   //   this.router.navigate(['/meus-livros'], { queryParams: { livroId, user_id } });
