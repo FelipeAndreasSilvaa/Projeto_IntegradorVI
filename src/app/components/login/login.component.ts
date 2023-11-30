@@ -26,7 +26,7 @@ export class LoginComponent {
       (response) => {
         if (response.success) {
           this.mensagemSucesso = 'Login efetuado com sucesso!';
-          // localStorage.setItem('token',response.token)
+          // localStorage.setItem('token', response.token);
           // Redirecionar para a página de meus livros após 2 segundos
          setTimeout(() => {
            this.router.navigate(['/home']);

@@ -28,10 +28,13 @@
     <div *ngFor="let linha of livrosDivididos" class="news-row">
       <div *ngFor="let livro of linha" class="news-container-single">
         <img src="../../../assets/livro1.png" alt="">
-        <h3>{{ livro.titulo }}</h3>
-        <p>Preço: R${{ livro.preco }}</p>
-        <p>Descrição: {{ livro.descricao }}</p>
-        <button>Pegar Livro</button>
+        <h3>{{ livro.Title }}</h3>
+        <p>Preço: R${{ livro.Price }}</p>
+        <p>Descrição: {{ livro.review_text }}</p>
+        <p>ProductId: {{livro.Id}}</p>
+        <p>Score: {{livro.review_score}}</p>
+        <p>Time:  {{livro.review_time}}</p>
+        <button type="submit" (click)="pegarLivro(livro.Id)">Pegar Livro</button>
       </div>
     </div>
   </div>

@@ -1,3 +1,4 @@
+import { LoginGuard } from './guards/login.guard';
 import { LidosComponent } from './pages/lidos/lidos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'resenhas', component: ResenhasComponent },
   {path: 'efeito-colaborativo', component: EfeitoColaborativoComponent },
   {path: 'about-you', component: AbouYouComponent },
+  {path: '**', redirectTo: '' } // Redireciona para o LoginComponent se a rota não for encontrada
 
 ];
 

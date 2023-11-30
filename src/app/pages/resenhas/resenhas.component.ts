@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AbandoneiService } from 'src/app/service/abandonei.service';
 import { ResenhaService } from 'src/app/service/resenha.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ResenhasComponent implements OnInit{
   livrosDivididos: any[] = [];
   // user_id: number = ;
 
-  constructor(private resenhaService: ResenhaService, private router: Router) {}
+  constructor(private resenhaService: ResenhaService, private router: Router, private abandoneiService: AbandoneiService) {}
 
   ngOnInit(): void {
     this.carregarLivros();
@@ -32,6 +33,17 @@ export class ResenhasComponent implements OnInit{
     }
   }
 
+  pegarLivro(livroId: number): void {
+    // Você precisará obter o ID do usuário logado
+    const usuarioId = 1 // obter o ID do usuário logado;
+
+    this.abandoneiService.adicionarLivroAbandonado(usuarioId, livroId)
+        .subscribe(() => {
+            // Aqui você pode adicionar lógica adicional se necessário
+            console.log(usuarioId)
+            console.log(`Livro ${livroId} adicionado aos abandonados.`);
+        });
+}
   // pegarLivro(livroId: number, user_id: number): void {
   //   // Redirecione para a página de "Meus Livros" com referência ao livro e usuário
   //   this.router.navigate(['/meus-livros'], { queryParams: { livroId, user_id } });
