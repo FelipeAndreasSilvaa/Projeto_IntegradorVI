@@ -11,11 +11,20 @@ const PORT = 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
+// const db = mysql.createConnection({
+//   host: 'node161686-env-5181209.jelastic.saveincloud.net',
+//   user: 'root',
+//   port: '14852',
+//   password: 'DXTrnb91160',
+//   database: 'Projeto_integrador'
+// });
+
 const db = mysql.createConnection({
-  host: '127.0.0.1',
+  host: 'node161687-env-8279702-review.jelastic.saveincloud.net',
   user: 'root',
-  password: 'root',
-  database: 'projeto_integrador',
+  port: '14856',
+  password: 'NHBfah67653',
+  database: 'projeto_ia'
 });
 
 db.connect((err) => {
@@ -138,12 +147,21 @@ app.get('/livrosUser', (req, res) => {
   });
 });
 
+
 app.post('/livrosPego', (req, res) => {
-  const { user_id, product_id, title, time, score } = req.body;
+  // Define o valor fixo para user_id
+  const fixedUserId = 'AF3X7J0XC391L';
 
-  const query = 'INSERT INTO livrosPego (user_id, product_id, title, review_time, review_score) VALUES (?, ?, ?, ?, ?)';
-  const values = [user_id, product_id, title, time, score];
+  // Extrai os outros dados do corpo da requisição
+  const { product_id, title, time, score } = req.body;
 
+  // Cria a consulta SQL com user_id fixo
+  const query = 'INSERT INTO livrosPego (product_id, user_id, title, score, time) VALUES (?, ?, ?, ?, ?)';
+
+  // Define os valores para a consulta
+  const values = [product_id, fixedUserId, title, score, time];
+
+  // Executa a consulta no banco de dados
   db.query(query, values, (err, result) => {
     if (err) {
       console.error('Erro ao adicionar livro pego:', err);
@@ -153,7 +171,6 @@ app.post('/livrosPego', (req, res) => {
     }
   });
 });
-
 
 // app.post('/teste', verifyToken, (req,res)=>{
 //   res.json('Informação secreta')
